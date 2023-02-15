@@ -1,7 +1,9 @@
-NAME	=  bureaucrat
+NAME	=  Form_up_maggots
+
 
 SRCS	= main.cpp \
-		   Bureaucrat.cpp
+		   Bureaucrat.cpp \
+		   Form.cpp
 
 
 OBJS		= $(SRCS:%.cpp=%.o)
