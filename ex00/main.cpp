@@ -2,31 +2,20 @@
 
 int main(void)
 {
-	std::string str;
-	int start;
-	int turn;
-
-	std::cout << "Enter (String | Start_num | Turn_num) -> ";
-	std::cin >> str >> start >> turn;
 	try
 	{
-		Bureaucrat b(str, start);
-		if (start > 0)
+		std::string str;
+		int grade;
+
+		std::cout << "Enter (String | Grade) -> ";
+		std::cin >> str >> grade;
+
+		if (str.empty())
 		{
-			for (int j = 0; j < turn; j++)
-			{
-				std::cout << b.getName() << " " << " Bureaucrat Grade-> " << b.getGrade() << std::endl;
-				b.increment();
-			}
+			throw std::invalid_argument("name cannot be empty");
 		}
-		else
-		{
-			for (int i = 0; i < turn; i++)
-			{
-				std::cout << b.getName() << " " << " Bureaucrat Grade-> " << b.getGrade() << std::endl;
-				b.decrement();
-			}
-		}
+		Bureaucrat b(str, grade);
+
 	}
 	catch(const std::exception& e)
 	{
