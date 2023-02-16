@@ -35,7 +35,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 	{
 		throw GradeTooLowException();
 	}
-	this->_grade = grade;
+	else
+	{
+		this->_grade = grade;
+		std::cout << "success!!" << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name)

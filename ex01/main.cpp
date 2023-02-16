@@ -1,32 +1,33 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
-	std::string str;
-	int start;
-	int turn;
-
-	std::cout << "Enter (String | Start_num | Turn_num) -> ";
-	std::cin >> str >> start >> turn;
 	try
 	{
-		Bureaucrat b(str, start);
-		if (start > 0)
-		{
-			for (int j = 0; j < turn; j++)
-			{
-				std::cout << b.getName() << " " << " Bureaucrat Grade-> " << b.getGrade() << std::endl;
-				b.increment();
-			}
-		}
-		else
-		{
-			for (int i = 0; i < turn; i++)
-			{
-				std::cout << b.getName() << " " << " Bureaucrat Grade-> " << b.getGrade() << std::endl;
-				b.decrement();
-			}
-		}
+		//====== Bureaucrat version =======
+		std::string name;
+		int num;
+	
+		std::cout << "Choose Bureaucrat -> String / Number " ;
+		std::cin >> name >> num;
+
+		if (name.empty() || num < 1 || num > 150)
+			throw std::invalid_argument("Error Invalid input");
+		Bureaucrat b(name, num);
+
+		//===== Form version ======
+		std::string form_name;
+		int r_sign;
+		int r_exe;
+
+		std::cout << "Choose Form -> String / Sign / Execute " ;
+		std::cin >> form_name >> r_sign >> r_exe ;
+		if (form_name.empty() || r_sign < 1 || r_sign > 150 || r_exe < 1 || r_exe > 150)
+			throw std::invalid_argument("Error Invalid input");
+
+		Form f(form_name, r_sign, r_exe);
+		f.beSigned(b);
 	}
 	catch(const std::exception& e)
 	{
