@@ -1,18 +1,19 @@
 #include "Bureaucrat.hpp"
 
-/* void Bureaucrat::executeForm(Form const & form)
+//new PDF request
+void Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{
-		//Bureaucrat b(*this);
-		form.execute(getName);
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 }
- */
+
 void Bureaucrat::signForm(Form &f)
 {
 	try

@@ -4,22 +4,22 @@
 //純粋仮想関数だからオーバーライトさせる。
 void Form::execute(Bureaucrat const &executor) const
 {
+	std::cout << "---executor---> " << executor.getGrade() << " | " << this->_RequiredToExecute <<std::endl;
 	if (this->_signed == false)
 		throw Form::NoSignException();
 	else if(executor.getGrade() > this->_RequiredToExecute)
 		throw Form::GradeTooLowException();
-	else
-		std::cout << "execute(Form) okay:)" << std::endl;
 }
 
 //========== check sign function =========
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
+	std::cout << "---Signed---> " << bureaucrat.getGrade() << " | " <<this->getRequiredToSign() <<std::endl;
+
 	if (bureaucrat.getGrade() > this->getRequiredToSign())
 		throw Form::GradeTooLowException();
 	else
 	{
-		std::cout << "You get required to sign:)" << std::endl;;
 		this->_signed = true;
 	}
 }

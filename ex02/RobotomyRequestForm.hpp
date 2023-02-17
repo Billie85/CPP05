@@ -2,22 +2,20 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include <cstdlib>
 
 class RobotomyRequestForm :public Form
 {
 private:
-	/* data */
+
 public:
-	RobotomyRequestForm(/* args */);
+	RobotomyRequestForm();
+	RobotomyRequestForm(std::string name);
+	RobotomyRequestForm(RobotomyRequestForm const &other);
 	~RobotomyRequestForm();
+	RobotomyRequestForm const &operator=(const RobotomyRequestForm &other);
+	void execute(Bureaucrat const & executor) const;
 };
-
-RobotomyRequestForm::RobotomyRequestForm(/* args */)
-{
-}
-
-RobotomyRequestForm::~RobotomyRequestForm()
-{
-}
 
 #endif
