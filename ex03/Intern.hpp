@@ -12,11 +12,10 @@
 class Intern
 {
 	public :
-		Form *makeForm(std::string str);
+		Form *makeForm(std::string form_name, std::string target);
 	Intern();
 	Intern(const Intern &other);
 	~Intern();
 	Intern const &operator= (const Intern &other);
 };
-//std::ostream &operator<< (std::ostream &os, const Intern &f);
 #endif

@@ -43,7 +43,7 @@ public :
 	Form();
 	Form(const Form &other);
 	Form(std::string name, int to_sign, int to_exe);
-	~Form();
+	virtual ~Form();
 };
 
 std::ostream &operator<< (std::ostream &os, const Form &f);

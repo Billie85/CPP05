@@ -28,6 +28,7 @@ int main(void)
 
 		Form f(form_name, r_sign, r_exe);
 		f.beSigned(b);
+		b.signForm(f);
 	}
 	catch(const std::exception& e)
 	{

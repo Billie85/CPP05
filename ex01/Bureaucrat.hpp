@@ -4,6 +4,7 @@
 # include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
 
 class Form;
 
@@ -32,6 +33,8 @@ class Bureaucrat
 //========= increment or decrement=========
 		void increment();
 		void decrement();
+//========= new ===========
+		void signForm(Form &f);
 };
 std::ostream &operator<< (std::ostream &os, Bureaucrat const f);
 #endif

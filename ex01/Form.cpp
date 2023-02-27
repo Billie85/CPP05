@@ -7,7 +7,6 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 		throw Form::GradeTooLowException();
 	else
 	{
-		std::cout << "You get required to sign:)" << std::endl;;
 		this->_signed = true;
 	}
 }

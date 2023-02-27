@@ -1,5 +1,18 @@
 #include "Bureaucrat.hpp"
 
+void Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 int Bureaucrat::getGrade() const
 {
 	//std::cout << "GetGrade called" << std::endl;

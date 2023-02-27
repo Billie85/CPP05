@@ -1,9 +1,10 @@
 {
 	"files.associations": {
+		"*.tcc": "cpp",
+		"type_traits": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
-		"*.tcc": "cpp",
 		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
@@ -30,7 +31,6 @@
 		"string_view": "cpp",
 		"system_error": "cpp",
 		"tuple": "cpp",
-		"type_traits": "cpp",
 		"utility": "cpp",
 		"fstream": "cpp",
 		"initializer_list": "cpp",
